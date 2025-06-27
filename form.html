@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SADHANA</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="icon" sizes="32x32" href="logo.png">
+    <link rel="icon" sizes="16x16" href="logo.png">
+    <style>
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;  
+      }
+
+      /* Fixed Menu bar styling */
+      .navbar {
+        background-color: rgb(1, 18, 116);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;  
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      /* Logo styling (left corner) */
+      .navbar .logo {
+        height: 70px;  
+        margin-left: 10px;
+        padding: 0px;  
+      }
+
+      /* Timer styling (right corner) */
+      .navbar .timer {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #e74c3c;
+      }
+
+      /* Logout button 3D styling */
+      .logout-button {
+        padding: 8px 15px;
+        font-size: 14px;
+        background-color: #fcfcfc;
+        border: none;
+        border-radius: 5px;
+        color: #007bff; 
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        margin-left: 5px;
+        margin-right: 50px;
+      }
+
+      .logout-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      .logout-button:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Form container styling */
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px; 
+        padding: 0 20px;
+      }
+
+      iframe {
+        border: none;
+        width: 100%;
+        height: 600px;  
+        max-width: 640px;
+        margin-top: 20px;
+      }
+
+      /* Warning message styling */
+      .warning-message {
+        background-color: #9a0101;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 5px;
+        display: none; 
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+      }
+
+      /* Additional styles for readability */
+      h1 {
+        color: #333;
+      }
+
+      p {
+        font-size: 18px;
+        color: #555;
+      }
+
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;  
+          text-align: left;
+          padding: 10px;
+        }
+
+        .navbar .logo {
+          height: 40px; 
+        }
+
+        .navbar .timer,
+        .navbar .logout-button {
+          font-size: 1.2em;
+        }
+
+        .container {
+          margin-top: 120px; 
+        }
+
+        iframe {
+          height: 400px;  
+        }
+
+        .logout-button {
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar .logo {
+          height: 30px;  
+        }
+
+        .navbar .timer {
+          font-size: 1.1em;
+        }
+
+        .logout-button {
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+
+        iframe {
+          height: 300px; 
+        }
+      }
+    </style>
+  </head>
+  <body>
+     
+    <div class="navbar">
+      <img src="logo.png" alt="Logo" class="logo" />
+
+      <!-- <h1>Aptitude</h1> -->
+
+      <!-- Timer and Logout button on the right -->
+      <div>
+        <span class="timer" id="timer">40:00</span>
+        <button class="logout-button" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+     
+    <div id="embeddedForm" class="container" style="margin-left: 30%;">
+      <h3  style="margin-left: 5%;">MCA 1st year.</h3>
+      <p style="margin-left: 5%;">Please fill out the form below. You have 40 minutes to complete it.</p>
+      <p id="msg" style="margin-left: 5%;"></p>
+
+      <!-- =============================1st yaer MCA change code=================================== -->
+
+     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1A_ThteJ0yOHLnNqddnGnNytaLEAroDUxYq5uwkTjxb_3Uw/viewform?usp=header" width="640" height="1531" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+      <!-- ================================change code ========================================== -->
+  </div>
+
+
+
+
+
+
+  <div id="embeddedForm1" class="container" style="margin-left: 30%;">
+      <h3  style="margin-left: 5%;">MCA 2nd year</h3>
+      <p  style="margin-left: 5%;">Please fill out the form below. You have 40 minutes to complete it.</p>
+      <p id="msg"  style="margin-left: 5%;"></p>
+
+
+      <!-- =============================2nd yaer MCA change code=================================== -->
+
+
+      
+     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1A_ThteJ0yOHLnNqddnGnNytaLEAroDUxYq5uwkTjxb_3Uw/viewform?usp=header" width="640" height="1531" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+      <!-- ================================change code ========================================== -->
+
+  </div>
+
+    <div class="warning-message" id="warningMessage">
+      You have switched away from the form. It may cause you to be logged out.
+    </div>
+<!-- 
+    <script>
+      let timeLeft = 2400; // 40 minutes
+      const timerElement = document.getElementById("timer");
+      const warningMessage = document.getElementById("warningMessage");
+      let visibilityCount = 0;
+
+      
+      function updateTimer() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerElement.textContent = `${String(minutes).padStart(
+          2,
+          "0"
+        )}:${String(seconds).padStart(2, "0")}`;
+      }
+
+      
+      const countdownInterval = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+
+        if (timeLeft <= 0) {
+          clearInterval(countdownInterval);
+          alert("Time is up! Submit the form.");
+        }
+      }, 1000);
+
+      
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          visibilityCount++;
+          warningMessage.style.display = "block";
+        } else {
+          warningMessage.style.display = "block";
+        }
+        
+        if (visibilityCount >= 2) {
+          window.location.href = "index.html";
+        }
+      });
+
+      
+
+      function logout() {
+    
+    const userConfirmed = confirm("Confirm to logout");
+
+    if (userConfirmed) {
+       
+        window.location.href = "index.html";
+    } else {
+       
+        console.log("User canceled the logout.");
+    }
+}
+
+        function getLoginDataFromQuery() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            const password = urlParams.get('password');
+            
+            
+
+            // Validate login credentials 
+            if (username === "MCA1" && password === "MCA@1") {
+                // If the login is successful, show the embedded form
+                document.getElementById('embeddedForm').style.display = 'block';
+                document.getElementById('embeddedForm1').style.display = 'none';
+            } else  if (username === "MCA2" && password === "MCA@2") {
+                // If the login is successful, show the embedded form
+                document.getElementById('embeddedForm').style.display = 'none';
+                document.getElementById('embeddedForm1').style.display = 'block';
+            } else  {
+               
+            }
+        }
+
+        // Call the function to display the data and handle validation
+        getLoginDataFromQuery();
+
+
+
+      
+
+// Warn user before leaving the page (e.g., back button or closing tab)
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  e.returnValue = 'Are you sure you want to leave? Your progress may be lost.';
+});
+
+
+
+
+ let devToolsOpened = false;
+
+      function detectDevTools() {
+        const threshold = 160;
+        const widthThreshold = 100;
+
+        if (
+          window.outerHeight - window.innerHeight > threshold ||
+          window.outerWidth - window.innerWidth > widthThreshold
+        ) {
+          if (!devToolsOpened) {
+            devToolsOpened = true;
+            alert("Warning: Please close the Inspect to continue.");
+             
+          }
+        } else {
+          devToolsOpened = false;
+        }
+      }
+
+      setInterval(detectDevTools, 500);
+
+    </script> -->
+
+
+    <script>
+  const timerElement = document.getElementById("timer");
+  const warningMessage = document.getElementById("warningMessage");
+  let visibilityCount = 0;
+
+  const TOTAL_TIME = 2400; // 40 minutes in seconds
+  const STORAGE_KEY = "sadhana_timer_start";
+
+  // Function to get current timestamp in seconds
+  function getCurrentTimestamp() {
+    return Math.floor(Date.now() / 1000);
+  }
+
+  function updateTimerDisplay(timeLeft) {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `${String(minutes).padStart(2, "0")}:${String(
+      seconds
+    ).padStart(2, "0")}`;
+  }
+
+  function initTimer() {
+    let startTime = localStorage.getItem(STORAGE_KEY);
+
+    if (!startTime) {
+      startTime = getCurrentTimestamp();
+      localStorage.setItem(STORAGE_KEY, startTime);
+    }
+
+    const interval = setInterval(() => {
+      const now = getCurrentTimestamp();
+      const elapsed = now - parseInt(startTime);
+      const timeLeft = TOTAL_TIME - elapsed;
+
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        updateTimerDisplay(0);
+        alert("Time is up! Submit the form.");
+        return;
+      }
+
+      updateTimerDisplay(timeLeft);
+    }, 1000);
+  }
+
+  // Call this to clear saved time when needed (e.g., logout or test end)
+  function clearTimer() {
+    localStorage.removeItem(STORAGE_KEY);
+  }
+
+  initTimer();
+
+  // Handle visibility change warning
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      visibilityCount++;
+      warningMessage.style.display = "block";
+    } else {
+      warningMessage.style.display = "block";
+    }
+
+    if (visibilityCount >= 2) {
+      clearTimer(); // Clear stored time
+      window.location.href = "index.html";
+    }
+  });
+
+  function logout() {
+    const userConfirmed = confirm("Confirm to logout");
+    if (userConfirmed) {
+      clearTimer(); // clear saved timer
+      window.location.href = "index.html";
+    }
+  }
+
+  function getLoginDataFromQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    const password = urlParams.get("password");
+
+    if (username === "MCA1" && password === "MCA@1") {
+      document.getElementById("embeddedForm").style.display = "block";
+      document.getElementById("embeddedForm1").style.display = "none";
+    } else if (username === "MCA2" && password === "MCA@2") {
+      document.getElementById("embeddedForm").style.display = "none";
+      document.getElementById("embeddedForm1").style.display = "block";
+    }
+  }
+
+  getLoginDataFromQuery();
+
+  window.addEventListener("beforeunload", function (e) {
+    e.preventDefault();
+    e.returnValue =
+      "Are you sure you want to leave? Your progress may be lost.";
+  });
+
+  let devToolsOpened = false;
+
+  function detectDevTools() {
+    const threshold = 160;
+    const widthThreshold = 100;
+
+    if (
+      window.outerHeight - window.innerHeight > threshold ||
+      window.outerWidth - window.innerWidth > widthThreshold
+    ) {
+      if (!devToolsOpened) {
+        devToolsOpened = true;
+        alert("Warning: Please close the Inspect to continue.");
+      }
+    } else {
+      devToolsOpened = false;
+    }
+  }
+
+  setInterval(detectDevTools, 500);
+</script>
+
+  </body>
+</html>

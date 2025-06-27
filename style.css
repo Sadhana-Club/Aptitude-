@@ -1,0 +1,357 @@
+*{
+
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+  }
+  
+  
+header{
+    display: flex;
+    width: 100%;
+    height:max-content;
+    background: rgb(1, 18, 116);
+}
+  
+header h1{
+    margin-top: 20px;
+    margin-left: 10px;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+header ul{
+    margin-left: 40%;
+    margin-top: 25px;
+  
+  }
+header ul a{
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  size: 20px;
+  
+  }
+
+/* header img{
+    width: 180px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 20px;
+} */
+
+.logo1{
+    width: 120px;
+    height: 110px;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom: 8px;
+}
+.logo2{
+    width: 180px;
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 375px; 
+    /* margin-right: 30px; */
+    
+}
+header h1{
+    margin-top: 50px;
+    color: white;
+    margin-left:450px;
+     
+}
+
+.pa{
+    background-color: rgb(1, 18, 116);
+    color: red;
+    text-align:end;
+    /* margin-right: 20px; */
+    /* margin-left: 650px;
+    margin-top: 30px; */
+}
+.pa h1{
+    margin-right: 20px;
+}
+header h3{
+    color: red;
+    margin-left: 650px;
+    margin-top: 30px;
+}
+.menu{
+    width: 100%;
+    height:50px;
+    background-color: rgb(16, 16, 214);
+
+}
+.menu ul{
+     display: inline-block;
+     align-items: center;  
+}
+
+.menu ul a{
+    margin-top: 10px;
+    margin-left: 300px;
+    color:rgb(231, 231, 231);
+    text-decoration: none;
+    size: 20px;
+    
+    }
+.menu ul a:hover{
+    color: red;
+    transition: 1s;
+}
+
+.text{
+    background-color: antiquewhite;
+    color: red;
+    height: 30px;
+}
+
+.program{
+         
+        display: flex;
+       
+}
+
+.home-img {
+    width: 100%;  
+    height: 500px; 
+    background-image: url('home.png');  
+    background-size: cover; 
+    background-position: center;  
+    position: relative;  
+}
+
+.text-overlay {
+    position: absolute;  
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);  
+    color: white; 
+    text-align: center; 
+    background-color: rgba(0, 0, 0, 0.5);  
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text-overlay h1 {
+    font-size: 36px;  
+    margin-bottom: 10px; 
+}
+
+.text-overlay p {
+    font-size: 18px;  
+}
+
+
+
+/* General section styling */
+.section-sm {
+    padding: 60px 0;  
+    background-color: #007bff;  
+    color: #fff;  
+    position: relative;
+}
+
+.section-sm .title {
+    font-size: 32px; 
+    font-weight: bold; 
+    text-transform: uppercase;  
+    margin-bottom: 10px;  
+}
+
+.section-sm p {
+    font-size: 18px; 
+    line-height: 1.5; 
+}
+
+.section-sm .btn {
+    font-size: 18px;  
+    font-weight: 600;  
+    padding: 12px 30px;  
+    background-color: #fff; 
+    color: #007bff; 
+    border-radius: 30px;  
+    transition: background-color 0.3s ease, color 0.3s ease;  
+}
+
+.section-sm .btn:hover {
+    background-color: rgb(1, 18, 116); 
+    color: #fff; 
+    transition: 2s;
+}
+
+/* Adjusting button appearance for larger screens */
+@media (min-width: 768px) {
+    .section-sm .btn {
+        font-size: 20px; 
+    }
+}
+
+/* Responsive styling for smaller devices */
+@media (max-width: 576px) {
+    .section-sm .container {
+        padding: 0 20px;  
+    }
+
+    .section-sm .title {
+        font-size: 28px;  
+    }
+
+    .section-sm p {
+        font-size: 16px;  
+    }
+
+    .section-sm .btn {
+        font-size: 16px;  
+        padding: 10px 25px;  
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Footer Logo */
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Footer Description */
+.footer-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Footer Heading */
+.footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+/* Footer Contact Info */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    color: #007bff;
+    margin-right: 10px;
+}
+
+/* Footer Social Icons */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+/* Footer Responsive */
+@media (max-width: 767px) {
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .col-lg-3 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer .footer-social {
+        justify-content: center;
+    }
+
+    .footer .footer-logo img {
+        max-width: 120px;
+    }
+}
+
+/* Added Margin Between Footer Sections */
+.footer .col-md-6 {
+    margin-bottom: 20px;
+}
+
+.footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px; /* Ensure columns are spaced nicely */
+}
+
+.footer .footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer .footer-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer .footer-description {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Add Hover Effects on Quick Links and Contact */
+.footer .footer-links a:hover,
+.footer .footer-contact li i:hover {
+    color: #007bff;
+}
+
+.swiper-pagination{
+    margin-left: 50%;
+}

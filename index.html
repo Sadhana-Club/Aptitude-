@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SADHANA</title>
+
+    
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    
+    
+    <link rel="icon" href="logo.png" type="image/png">
+    
+   
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    
+ 
+    <link rel="icon" sizes="32x32" href="logo.png">
+    <link rel="icon" sizes="16x16" href="logo.png">
+
+     
+    <meta name="description" content="This is an example webpage with a favicon.">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+        href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // Gallery script
+        document.addEventListener('DOMContentLoaded', function () {
+            var TrandingSlider = new Swiper('.tranding-slider', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                loop: true,   
+                slidesPerView: 'auto',
+                spaceBetween: 40, 
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2.5,
+                },
+                autoplay: {
+                    delay: 3000,  
+                    disableOnInteraction: false,  
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1,  
+                        spaceBetween: 20,  
+                    },
+                    1024: {
+                        slidesPerView: 'auto',  
+                        spaceBetween: 40,  
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery-cont {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        .section-subheading {
+            font-size: 30px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            width: 70%;  
+        }
+
+        .swiper-slide img {
+            width: 70%;
+            height: 60%;
+            margin-left: 15%;
+            border-radius: 10px;
+            object-fit: cover;  
+        }
+
+        .swiper-slide-content {
+            margin-top: 15px;
+        }
+
+        .food-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .food-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .food-rating {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .description p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .swiper-button-prev, .swiper-button-next {
+            color: #007bff;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .swiper-button-prev:hover, .swiper-button-next:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        /* Add style for navigation buttons
+        
+        
+        
+        
+         <!-- <div class="pa">
+        <h3 style="margin-right: 30px; padding: 2px;">Internalize ---> Empower ---> Evolve</h3>
+
+       <!-- </div> -->
+        */
+        .swiper-button-prev,
+        .swiper-button-next {
+            font-size: 25px;
+        }
+
+
+
+
+        @media screen and (max-width: 1024px) {
+            header h1 {
+                font-size: 1.8em;
+                margin-left: 30px;
+            }
+
+            header ul {
+                margin-top: 20px;
+            }
+
+            .menu ul a {
+                font-size: 1.2em;
+                margin-left: 20px;
+            }
+
+            .logo1 {
+                width: 100px;
+                height: 90px;
+            }
+
+            .logo2 {
+                width: 160px;
+                height: 70px;
+            }
+
+            .home-img {
+                height: 400px;
+            }
+
+            .text-overlay h1 {
+                font-size: 30px;
+            }
+
+            .text-overlay p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+                margin-left: 0;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu ul a {
+                font-size: 1.2em;
+            }
+
+            .home-img {
+                height: 300px;
+            }
+
+            .text-overlay h1 {
+                font-size: 28px;
+            }
+
+            .text-overlay p {
+                font-size: 14px;
+            }
+
+            .logo1,
+            .logo2 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+                margin-left: 0;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .menu ul a {
+                font-size: 1em;
+            }
+
+            .home-img {
+                height: 200px;
+            }
+
+            .text-overlay h1 {
+                font-size: 24px;
+            }
+
+            .text-overlay p {
+                font-size: 12px;
+            }
+
+            .logo1 {
+                width: 80px;
+                height: 70px;
+            }
+
+            .logo2 {
+                width: 140px;
+                height: 60px;
+            }
+        }
+      
+     .developer-link {
+    color: #007bff;
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .developer-link:hover {
+    color: #e74c3c;
+  }
+
+  .developer-link::after {
+    /* content: ' ↗'; */
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+
+  .developer-link:hover::after {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+
+  .dev-typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+  }
+
+  
+    </style>
+</head>
+<body>
+     
+        <header id="#home">
+           <img src="clogo-removebg-preview.png" class="logo1">
+           <h1> Welcom To SADHANA-The IT Club </h1>
+           <img src="logo.png" class="logo2"> <br>
+        
+           
+             
+       </header>
+       
+       <div class="menu">  
+           <ul style="margin-top: 10px;">
+
+<!-- <a href="#" >About The Program</a> -->
+<a href="#home">Home</a>
+<a href="#tranding">Gallery</a>
+<a href="#apti">Aptitude</a> 
+<a href="#about">About</a>
+</ul>
+</div>
+
+<div class="text">
+<marquee>"Practice for Perfection" which is the caption of our IT Club</marquee>
+</div>
+<div class="home-img">
+    <div class="text-overlay">
+        <!-- <h1>Your Text Here</h1>
+        <p>Some description or other content.</p> -->
+    </div>
+</div>
+
+
+
+    <section id="tranding" class="gallery-cont" >
+        <div class="container">
+            <h1 class="text-center section-subheading">Gallery</h1>
+        </div>
+        <div class="container">
+            <div class="swiper tranding-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="2.jpg" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">CEO</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">ROHAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2012</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione.</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="3 (2).JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="15.jpeg" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="4.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="5.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="6.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="7.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="8.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="9.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="10.JPG" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="11.jpg" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="12.jpg" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="13.jpeg" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="14.jpeg" alt="Image">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                     <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="3.jpg" alt="Tranding">
+                        </div>
+                        <div class="tranding-slide-content">
+                            <!-- <h1 class="food-price">Team</h1> -->
+                            <div class="tranding-slide-content-bottom">
+                                <!-- <h2 class="food-name">Innovation Instigators</h2> -->
+                                <h3 class="food-rating">
+                                    <!-- <span>2014</span> -->
+                                    <div class="description">
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</p> -->
+                                    </div>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Add more slides as needed -->
+                </div>
+
+                <div class="tranding-slider-control">
+                    <div class="swiper-button-prev slider-arrow">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                    </div>
+                    <div class="swiper-button-next slider-arrow">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section-sm bg-primary" id="apti">
+        <!-- container -->
+        <div class="container text-center text-sm-left">
+            <!-- row -->
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title text-light">APTITUDE</h6>
+                    <p class="m-0 text-light">Unlock your potential, because every challenge is just an opportunity in disguise.</p>
+                </div>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                     
+                      <a href="login.html">
+                    <button class="btn btn-lg my-font btn-light rounded">Lets Start</button> </a>
+                </div>
+            </div><!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of section -->
+
+
+
+
+
+
+    <footer class="footer bg-dark text-light py-5" id="about">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Logo and About Section -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Logo" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        Welcome to our IT Club.
+                    </p>
+                </div>
+    
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#tranding">Gallery</a></li>
+                        <li><a href="#apti">Aptitude</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Kengeri, Bangalore – 560004,
+                            Karnataka, India</li>
+                        <!-- <li><i class="fas fa-phone"></i> +123 456 7890</li> -->
+                        <li><i class="fas fa-envelope"></i> sadhanaclub.mca@suranacollege.edu.in</li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4: Follow Us -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Follow Us</h5>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1D2azRysfH/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/school/surana/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/sadhana_it_club?igsh=bjR5dHZhcG5jcGV6" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@suranacollegesouthendcampus?si=wV9zpsJdYk9v_Y9n" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<!-- Footer Bottom -->
+<!-- <div class="footer-bottom text-center py-3">
+    <p>&copy; Sadhana IT Club. All rights Reserved. Developed by <a href="https://www.linkedin.com/in/parvez-b-671b74258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Parvez.</a></p>
+</div> -->
+
+<div class="footer-bottom text-center py-4" style="background: #f9f9f9; border-top: 1px solid #ddd;">
+  <p style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: #333;">
+    Built with 💙 by
+    
+      <a href="https://www.linkedin.com/in/parvez-b-671b74258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+         class="developer-link"
+         target="_blank">Parvez</a> And 
+         <a href="https://www.linkedin.com/in/karthik-shet-519530257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+         class="developer-link"
+         target="_blank">Kartik</a> 
+    
+  </p>
+</div>
+</body>
+</html>
