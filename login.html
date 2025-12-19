@@ -238,13 +238,32 @@ button span {
         </div>
     </div>
      
-    <script>
+   <script>
   const VALID_USER = "MCA";
   const VALID_PASS = "MCA@2025";
 
+  // If already logged in, redirect
   if (sessionStorage.getItem("loggedIn") === "true") {
     window.location.href = "form.html";
   }
+
+  // FORCE LOGIN VIEW ON LOAD
+  window.addEventListener("DOMContentLoaded", () => {
+    const loginText = document.querySelector(".login-text");
+    const text = document.querySelector(".login-text .text");
+    const callText = document.querySelector(".call-text");
+    const cta = document.querySelector(".cta");
+
+    // Expand login panel immediately
+    loginText.classList.add("expand");
+    text.classList.add("show-hide");
+
+    // Hide the "Show us your creative side" section
+    if (callText) callText.style.display = "none";
+
+    // Hide the arrow button (optional but recommended)
+    if (cta) cta.style.display = "none";
+  });
 
   function captureLoginData(event) {
     event.preventDefault();
@@ -262,6 +281,8 @@ button span {
     return false;
   }
 </script>
+
 </body>
 </html>
+
 
