@@ -239,74 +239,29 @@ button span {
     </div>
      
     <script>
+  const VALID_USER = "MCA";
+  const VALID_PASS = "MCA@2025";
 
-if (sessionStorage.getItem('loggedIn') === 'true') {
-            // Disable form fields and show disqualified message
-            document.getElementById('username').disabled = true;
-            document.getElementById('password').disabled = true;
-            document.querySelector('.login-btn').disabled = true;
-            document.getElementById('disqualified-message').textContent = "You are disqualified from logging in again.";
-        }
-    
+  if (sessionStorage.getItem("loggedIn") === "true") {
+    window.location.href = "form.html";
+  }
 
-       
+  function captureLoginData(event) {
+    event.preventDefault();
 
-        var cta = document.querySelector(".cta");
-        var check = 0;
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-        cta.addEventListener('click', function(e){
-            var text = e.target.nextElementSibling;
-            var loginText = e.target.parentElement;
-            text.classList.toggle('show-hide');
-            loginText.classList.toggle('expand');
-            if(check == 0)
-            {
-                cta.innerHTML = "<i class=\"fas fa-chevron-up\"></i>";
-                check++;
-            }
-            else
-            {
-                cta.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
-                check = 0;
-            }
-        });
-    function captureLoginData(event) {
-            event.preventDefault();  
-            
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            
-           
-            const loginData = {
-                username: username,
-                password: password
-            };
-
-            console.log("Login Data:", loginData);
-
-          
-            if (username === "MCA1" && password === "MCA@1") {
-                sessionStorage.setItem('loggedIn', 'true');
-
-                const queryString = `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
-                window.location.href = "form.html" + queryString;
-        }else if (username === "MCA2" && password === "MCA@2") {
-            sessionStorage.setItem('loggedIn', 'true');
-            const queryString = `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
-                window.location.href = "form.html" + queryString;
-        } else {
-            alert("Invalid user name or password");
-            
-            document.getElementById('error-message').textContent = "Invalid username or password.";
-        }
-           
-            
-            return false; 
-        }
-
-
-
-        
-    </script>
+    if (username === VALID_USER && password === VALID_PASS) {
+      sessionStorage.setItem("loggedIn", "true");
+      window.location.href = "form.html";
+    } else {
+      document.getElementById("error-message").textContent =
+        "Invalid username or password.";
+    }
+    return false;
+  }
+</script>
 </body>
 </html>
+
