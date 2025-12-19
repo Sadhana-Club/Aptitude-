@@ -201,13 +201,19 @@
     </div>
 
 
-   <script>
+  <script>
+  /* ---------- AUTH CHECK ---------- */
+  if (sessionStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+
+  /* ---------- TIMER ---------- */
   const timerElement = document.getElementById("timer");
   const warningMessage = document.getElementById("warningMessage");
 
-  let visibilityCount = 0;
   const TOTAL_TIME = 3600; // 60 minutes
   const STORAGE_KEY = "sadhana_timer_start";
+  let visibilityCount = 0;
 
   function nowSeconds() {
     return Math.floor(Date.now() / 1000);
@@ -216,7 +222,8 @@
   function updateTimerDisplay(timeLeft) {
     const m = Math.floor(timeLeft / 60);
     const s = timeLeft % 60;
-    timerElement.textContent = `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    timerElement.textContent =
+      String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
   }
 
   function initTimer() {
@@ -227,17 +234,16 @@
     }
 
     const interval = setInterval(() => {
-      const elapsed = nowSeconds() - parseInt(startTime);
+      const elapsed = nowSeconds() - startTime;
       const timeLeft = TOTAL_TIME - elapsed;
 
       if (timeLeft <= 0) {
         clearInterval(interval);
-        updateTimerDisplay(0);
         alert("Time is up! Submit the form.");
         logout(true);
-        return;
+      } else {
+        updateTimerDisplay(timeLeft);
       }
-      updateTimerDisplay(timeLeft);
     }, 1000);
   }
 
@@ -247,7 +253,7 @@
 
   initTimer();
 
-  // TAB SWITCH WARNING
+  /* ---------- TAB SWITCH RULE ---------- */
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") {
       visibilityCount++;
@@ -259,57 +265,34 @@
     }
   });
 
+  /* ---------- LOGOUT ---------- */
   function logout(force = false) {
-    if (force || confirm("Confirm to logout")) {
+    if (force || confirm("Confirm logout?")) {
       clearTimer();
+      sessionStorage.clear();
       window.location.href = "index.html";
     }
   }
 
-  // SINGLE CREDENTIAL VALIDATION
-  function validateLogin() {
-    const params = new URLSearchParams(window.location.search);
-    const username = params.get("username");
-    const password = params.get("password");
-
-    const VALID_USER = "MCA";
-    const VALID_PASS = "MCA@2025";
-
-    if (username === VALID_USER && password === VALID_PASS) {
-      document.getElementById("embeddedForm1").style.display = "block";
-    } else {
-      logout(true);
-    }
-  }
-
-  validateLogin();
-
-  window.addEventListener("beforeunload", function (e) {
-    e.preventDefault();
-    e.returnValue = "Are you sure you want to leave? Your progress may be lost.";
-  });
-
-  // DEVTOOLS DETECTION (UNCHANGED)
+  /* ---------- DEVTOOLS DETECTION ---------- */
   let devToolsOpened = false;
-  function detectDevTools() {
+  setInterval(() => {
     if (
       window.outerHeight - window.innerHeight > 160 ||
       window.outerWidth - window.innerWidth > 100
     ) {
       if (!devToolsOpened) {
         devToolsOpened = true;
-        alert("Warning: Please close Inspect to continue.");
+        alert("Warning: Close developer tools to continue.");
       }
     } else {
       devToolsOpened = false;
     }
-  }
-  setInterval(detectDevTools, 500);
+  }, 500);
 </script>
-
-
   </body>
 </html>
+
 
 
 
