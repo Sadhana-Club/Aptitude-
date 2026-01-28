@@ -1,292 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>BrainGate – Enter the Challenge</title>
-    <link rel="icon" href="logo.png" type="image/x-icon">
-    
- 
-    <link rel="icon" href="logo.png" type="image/png">
-    
-     
-    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-    
-    
-    <link rel="icon" sizes="32x32" href="logo.png">
-    <link rel="icon" sizes="16x16" href="logo.png">
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background: linear-gradient(135deg, #ff7f50, #00bfff, #6a5acd); /* Unique multi-color gradient */
-            
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        .wrapper {
-            width: 800px;
-            height: 600px;
-            position: relative;
-            margin: 3% auto;
-            box-shadow: 2px 18px 70px 0px #9D9D9D;
-            overflow: hidden;
-        }
+<title>BrainGate – Enter the Challenge</title>
+<link rel="icon" href="logo.png">
 
-        .login-text {
-            width: 800px;
-            height: 450px;
-            background: linear-gradient(to left, #ab68ca, #de67a3);
-            position: absolute;
-            top: -300px;
-            box-sizing: border-box;
-            padding: 6%;
-            transition: all 0.5s ease-in-out;
-            z-index: 11;
-        }
-
-        .text {
-            margin-left: 20px;
-            color: #fff;
-            display: none;
-            transition: all 0.5s ease-in-out;
-            transition-delay: 0.3s;
-        }
-
-        .text a, .text a:visited {
-            font-size: 36px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-        }
-
-        .text hr {
-            width: 10%;
-            float: left;
-            background-color: #fff;
-            font-size: 16px;
-        }
-
-        .text input {
-            margin-top: 30px;
-            height: 40px;
-            width: 300px;
-            border-radius: 2px;
-            border: none;
-            background-color: #444;
-            opacity: 0.6;
-            outline: none;
-            color: #fff;
-            padding-left: 10px;
-        }
-
-        .text input[type=text] {
-            margin-top: 60px;
-        }
-
-        .text button {
-            margin-top: 60px;
-            height: 40px;
-            width: 140px;
-            outline: none;
-        }
-
-        .login-btn {
-            background: #fff;
-            border: none;
-            border-radius: 2px;
-            color: #696a86;
-        }
-
-        .cta {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #696a86;
-            border: 2px solid #fff;
-            position: absolute;
-            bottom: -30px;
-            left: 370px;
-            color: #fff;
-            outline: none;
-            cursor: pointer;
-            z-index: 11;
-        }
-
-        .call-text {
-            background-color: #fff;
-            width: 800px;
-            height: 450px;
-            position: absolute;
-            bottom: 0;
-            padding: 10%;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .call-text h1 {
-            font-size: 42px;
-            margin-top: 10%;
-            color: #696a86;
-        }
-
-        .call-text h1 span {
-            color: #333;
-            font-weight: bolder;
-        }
-
-        .call-text button {
-            height: 40px;
-            width: 180px;
-            border: none;
-            border-radius: 20px;
-            background: linear-gradient(to left, #ab68ca, #de67a3);
-            color: #fff;
-            font-weight: bolder;
-            margin-top: 30px;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .show-hide {
-            display: block;
-        }
-
-        .expand {
-            transform: translateY(300px);
-        }
-       /* From uiverse.io by @Ali-Tahmazi99 */
-button {
- display: inline-block;
- width: 150px;
- height: 50px;
- border-radius: 10px;
- border: 1px solid #03045e;
- position: relative;
- overflow: hidden;
- transition: all 0.5s ease-in;
- z-index: 1;
+<style>
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #ff7f50, #00bfff, #6a5acd);
 }
 
-button::before,
-button::after {
- content: '';
- position: absolute;
- top: 0;
- width: 0;
- height: 100%;
- transform: skew(15deg);
- transition: all 0.5s;
- overflow: hidden;
- z-index: -1;
+/* ================= EXISTING STYLES (UNCHANGED) ================= */
+
+.wrapper {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    margin: 3% auto;
+    box-shadow: 2px 18px 70px 0px #9D9D9D;
+    overflow: hidden;
 }
 
-button::before {
- left: -10px;
- /* background: #240046; */
+.login-text {
+    width: 800px;
+    height: 450px;
+    background: linear-gradient(to left, #ab68ca, #de67a3);
+    position: absolute;
+    top: -300px;
+    padding: 6%;
+    transition: all 0.5s ease-in-out;
+    z-index: 11;
 }
 
-button::after {
- right: -10px;
- /* background: #5a189a; */
+.text {
+    margin-left: 20px;
+    color: #fff;
+    display: none;
 }
 
-button:hover::before,
-button:hover::after {
- width: 58%;
+.text input {
+    margin-top: 30px;
+    height: 40px;
+    width: 300px;
+    border: none;
+    background-color: #444;
+    opacity: 0.6;
+    color: #fff;
+    padding-left: 10px;
 }
 
-button:hover span {
- /* color: #e0aaff; */
- transition: 0.3s;
+.login-btn {
+    background: #fff;
+    border: none;
+    border-radius: 2px;
+    color: #696a86;
+    margin-top: 40px;
 }
 
-button span {
- color: #03045e;
- font-size: 18px;
- transition: all 0.3s ease-in;
-}
-    </style>
+.show-hide { display: block; }
+.expand { transform: translateY(300px); }
 
-    
+/* ================= POPUP STYLES (ISOLATED) ================= */
+
+.rules-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.rules-box {
+    background: #fff;
+    width: 420px;
+    padding: 25px;
+    border: 3px solid skyblue;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.35);
+    position: relative;
+}
+
+.rules-box h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+}
+
+.rules-box ul {
+    padding-left: 20px;
+}
+
+.rules-box li {
+    margin: 8px 0;
+    color: #444;
+}
+
+.rules-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.rules-close:hover {
+    color: red;
+}
+
+.rules-ok {
+    display: block;
+    margin: 15px auto 0;
+    background: skyblue;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.rules-ok:hover {
+    background: deepskyblue;
+}
+.button-18 {
+  align-items: center;
+  background-color: #fff;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus { 
+  background-color: #16437E;
+}
+
+.button-18:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.button-18:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+</style>
 </head>
-<body>
-        <div class="wrapper" id="scriptButton">
-        <div class="login-text">
-            <div class="text">
-                <h1>BrainGate – Enter the Challenge</h1>
-                <hr>
-                <br>
-                <form id="loginForm" action="loginData.html" method="POST" onsubmit="return captureLoginData(event)">
 
-                <input type="text" placeholder="Username" id="username" name="username" required>
-                <br>
-                <input type="password" placeholder="Password" id="password" name="password" required>
-                <br>
-                <button class="login-btn" type="submit"><span>Log In</span></button>
+<body>
+
+<!-- ================= RULES POPUP ================= -->
+
+<div id="rulesPopup" class="rules-overlay">
+    <div class="rules-box">
+        <span class="rules-close" onclick="closeRules()">×</span>
+
+        <h2>Aptitude Test Rules</h2>
+        <ul>
+            <li>Each question has one correct answer only</li>
+            <li>No negative marking</li>
+            <li>Do not refresh or leave the page</li>
+            <li>The test is time bound</li>
+            <li>Submit before timer ends</li>
+        </ul>
+
+        <button class="rules-ok" onclick="closeRules()">I Understand</button>
+    </div>
+</div>
+
+<!-- ================= EXISTING LOGIN UI ================= -->
+
+<div class="wrapper" id="scriptButton">
+    <div class="login-text">
+        <div class="text">
+            <h1>BrainGate – Enter the Challenge</h1>
+            <hr><br>
+
+            <form id="loginForm" onsubmit="return captureLoginData(event)">
+                <input type="text" id="username" placeholder="Username" required><br>
+                <input type="password" id="password" placeholder="Password" required><br><br><br>
+                <button class="button-18" type="submit">Log In</button>
             </form>
-                <div class="error-message" id="error-message"></div>
-                <div class="disqualified-message" id="disqualified-message"></div>
-            </div>
+
+            <div id="error-message"></div>
         </div>
     </div>
-     
-   <script>
-  const VALID_USER = "sadhana";
-  const VALID_PASS = "MCA@2026";
+</div>
 
-  // If already logged in, redirect
-  if (sessionStorage.getItem("loggedIn") === "true") {
-    window.location.href = "form.html";
-  }
+<!-- ================= JAVASCRIPT ================= -->
 
-  // FORCE LOGIN VIEW ON LOAD
-  window.addEventListener("DOMContentLoaded", () => {
+<script>
+const VALID_USER = "sadhana";
+const VALID_PASS = "MCA@2026";
+
+/* AUTO SHOW RULES */
+window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("rulesPopup").style.display = "flex";
+
     const loginText = document.querySelector(".login-text");
     const text = document.querySelector(".login-text .text");
-    const callText = document.querySelector(".call-text");
-    const cta = document.querySelector(".cta");
 
-    // Expand login panel immediately
     loginText.classList.add("expand");
     text.classList.add("show-hide");
+});
 
-    // Hide the "Show us your creative side" section
-    if (callText) callText.style.display = "none";
+/* CLOSE RULES */
+function closeRules() {
+    document.getElementById("rulesPopup").style.display = "none";
+}
 
-    // Hide the arrow button (optional but recommended)
-    if (cta) cta.style.display = "none";
-  });
-
-  function captureLoginData(event) {
+/* LOGIN CHECK */
+function captureLoginData(event) {
     event.preventDefault();
 
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
     if (username === VALID_USER && password === VALID_PASS) {
-      sessionStorage.setItem("loggedIn", "true");
-      window.location.href = "form.html";
+        sessionStorage.setItem("loggedIn", "true");
+        window.location.href = "form.html";
     } else {
-      document.getElementById("error-message").textContent =
-        "Invalid username or password.";
+        document.getElementById("error-message").textContent =
+            "Invalid username or password.";
     }
     return false;
-  }
-    
-
+}
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
