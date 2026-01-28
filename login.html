@@ -206,94 +206,12 @@ button span {
  font-size: 18px;
  transition: all 0.3s ease-in;
 }
-.popup-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;                /* top:0 left:0 right:0 bottom:0 */
-    background: rgba(0,0,0,0.5);
-
-    /* Perfect centering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 9999;
-}
-
-.popup-box {
-    background: #fff;
-    width: 420px;
-    padding: 25px;
-    border: 3px solid skyblue;
-    border-radius: 12px;
-    position: relative;
-    text-align: left;
-    box-shadow: 0 0 18px rgba(0,0,0,0.35);
-}
-
-.popup-box h2 {
-    text-align: center;
-    margin-top: 0;
-}
-
-.popup-box ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.popup-box li {
-    margin-bottom: 8px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    color: red;
-}
-
-.ok-btn {
-    background: skyblue;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-}
-
-.ok-btn:hover {
-    background: deepskyblue;
-}
     </style>
 
     
 </head>
 <body>
-    <!-- Rules Popup -->
-<div id="rulesPopup" class="popup-overlay">
-    <div class="popup-box">
-        <span class="close-btn" onclick="closePopup()">×</span>
-
-        <h2>Aptitude Test Rules</h2>
-        <ul>
-            <li>Each question has only one correct answer.</li>
-            <li>No negative marking.</li>
-            <li>Do not refresh the page during the test.</li>
-            <li>The test is time-bound.</li>
-            <li>Submit before time expires.</li>
-        </ul>
-
-        <button onclick="closePopup()" class="ok-btn">I Understand</button>
-    </div>
-</div>
-
-    <div class="wrapper" id="scriptButton">
+        <div class="wrapper" id="scriptButton">
         <div class="login-text">
             <div class="text">
                 <h1>BrainGate – Enter the Challenge</h1>
@@ -355,25 +273,13 @@ button span {
     }
     return false;
   }
-       <script>
-function openPopup() {
-    document.getElementById("rulesPopup").style.display = "flex";
-}
-
-function closePopup() {
-    document.getElementById("rulesPopup").style.display = "none";
-}
-
-// Auto show on page load (optional)
-window.onload = function() {
-    openPopup();
-};
-</script>
+    
 
 </script>
 
 </body>
 </html>
+
 
 
 
