@@ -276,3 +276,12 @@
     font-size: 18px;
     font-weight: bold;
 }
+.candidate-status{
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: right;
+    position: relative;
+    right: 25px;
+}
