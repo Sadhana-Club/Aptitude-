@@ -1,0 +1,285 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+h1{
+    color:goldenrod;
+}
+body{
+    font-family:'Segoe UI',sans-serif;
+    min-height:100vh;
+    background:#0f172a;
+    overflow:hidden;
+}
+.modern-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    background:linear-gradient(135deg,#061539,#0a1e52);
+    color:white;
+    box-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 50px;
+}
+
+.logo-left{
+    width:80px;
+    height:auto;
+}
+
+.logo-right{
+    width:120px;
+    height:auto;
+}
+
+.club-brand{
+    text-align:center;
+}
+
+.club-brand h1{
+    font-size:2.8rem;
+    font-weight:700;
+    letter-spacing:2px;
+    margin:0;
+    color:goldenrod;
+}
+
+.club-brand h2{
+    font-size:1.1rem;
+    color:#00bfff;
+    margin-top:2px;
+}
+
+.club-brand p{
+    margin-top:5px;
+    font-size:0.85rem;
+    letter-spacing:3px;
+    color:#d9d9d9;
+}
+
+.glow-dot{
+    background:linear-gradient(45deg,#00d4ff,#38bdf8,#7dd3fc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-size:1.4rem;
+    margin:0 12px;
+    animation:pulse 2s infinite;
+}
+
+.login-main{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:150px;
+}
+/* Animated Dot Grid Canvas */
+#dotCanvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+.glow{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at top right,
+    rgba(37,99,235,.35),
+    transparent 35%);
+}
+
+/* Login Card */
+.wrapper{
+    width:450px;
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+    color:white;
+}
+
+.wrapper h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    background:rgba(255,255,255,.12);
+    color:white;
+}
+
+input::placeholder{
+    color:#cbd5e1;
+}
+
+.button-18{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    background:#2563eb;
+    color:white;
+    margin-top:10px;
+    transition:.3s;
+}
+
+.button-18:hover{
+    background:#1d4ed8;
+}
+
+#error-message{
+    margin-top:12px;
+    text-align:center;
+    color:#ff6b6b;
+}
+
+/* Rules Popup */
+.rules-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    backdrop-filter: blur(8px);
+}
+
+.rules-box{
+    width:430px;
+    padding:34px 32px 30px;
+    border-radius:18px;
+    position:relative;
+    color:white;
+    background:
+        radial-gradient(circle at top left, rgba(218,165,32,.22), transparent 35%),
+        linear-gradient(135deg, rgba(6,21,57,.96), rgba(10,30,82,.96));
+    border:1px solid rgba(218,165,32,.45);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55),
+        0 0 35px rgba(218,165,32,.15);
+}
+
+.rules-box h2{
+    text-align:center;
+    margin-bottom:22px;
+    color:goldenrod;
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.rules-box ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.rules-box li{
+    margin:14px 0;
+    padding-left:26px;
+    position:relative;
+    color:#e8edf8;
+    font-size:15px;
+    line-height:1.5;
+}
+
+.rules-box li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:9px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:goldenrod;
+    box-shadow:0 0 12px rgba(218,165,32,.8);
+}
+
+.rules-close{
+    position:absolute;
+    right:16px;
+    top:12px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:24px;
+    color:white;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    transition:.3s;
+}
+
+.rules-close:hover{
+    color:#061539;
+    background:goldenrod;
+    transform:rotate(90deg);
+}
+
+.rules-ok{
+    display:block;
+    margin:28px auto 0;
+    border:none;
+    background:goldenrod;
+    color:#061539;
+    padding:12px 26px;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:800;
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.35),
+        0 0 18px rgba(218,165,32,.28);
+    transition:.3s;
+}
+
+.rules-ok:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 18px 34px rgba(0,0,0,.42),
+        0 0 26px rgba(218,165,32,.45);
+}
+
+@media(max-width:500px){
+    .rules-box{
+        width:90%;
+        padding:30px 24px 26px;
+    }
+
+    .rules-box h2{
+        font-size:24px;
+    }
+}

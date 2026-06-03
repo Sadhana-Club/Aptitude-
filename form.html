@@ -6,178 +6,24 @@
     <title>SADHANA</title>
     <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="icon" href="logo.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-    <link rel="icon" sizes="32x32" href="logo.png">
-    <link rel="icon" sizes="16x16" href="logo.png">
-    <style>
-      
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;  
-      }
-
-      /* Fixed Menu bar styling */
-      .navbar {
-        background-color: rgb(1, 18, 116);
-        color: white;
-        padding: 15px;
-        text-align: center;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 10;  
-        display: flex;
-        justify-content: space-between;  
-        align-items: center;
-        padding: 10px 20px;
-      }
-
-      /* Logo styling (left corner) */
-      .navbar .logo {
-        height: 70px;  
-        margin-left: 10px;
-        padding: 0px;  
-      }
-
-      /* Timer styling (right corner) */
-      .navbar .timer {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: #e74c3c;
-      }
-
-      /* Logout button 3D styling */
-      .logout-button {
-        padding: 8px 15px;
-        font-size: 14px;
-        background-color: #fcfcfc;
-        border: none;
-        border-radius: 5px;
-        color: #007bff; 
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-        margin-left: 5px;
-        margin-right: 50px;
-      }
-
-      .logout-button:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      }
-
-      .logout-button:active {
-        transform: translateY(2px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Form container styling */
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center horizontally */
-        justify-content: center; /* Center vertically if needed */
-        margin-top: 80px; 
-        padding: 0 20px;
-      }
-
-      iframe {
-        border: none;
-        width: 100%;
-        height: 600px;  
-        max-width: 640px;
-        margin-top: 20px;
-      }
-
-      /* Warning message styling */
-      .warning-message {
-        background-color: #9a0101;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        padding: 10px;
-        margin: 20px;
-        border-radius: 5px;
-        display: none; 
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 100;
-      }
-
-      /* Additional styles for readability */
-      h1 {
-        color: #333;
-      }
-
-      p {
-        font-size: 18px;
-        color: #555;
-      }
-
-      /* Media queries for responsiveness */
-      @media (max-width: 768px) {
-        .navbar {
-          flex-direction: column;  
-          text-align: left;
-          padding: 10px;
-        }
-
-        .navbar .logo {
-          height: 40px; 
-        }
-
-        .navbar .timer,
-        .navbar .logout-button {
-          font-size: 1.2em;
-        }
-
-        .container {
-          margin-top: 120px; 
-        }
-
-        iframe {
-          height: 400px;
-          justify-content: center; /* Centers horizontally */
-          align-items: center; 
-        }
-
-        .logout-button {
-          padding: 6px 12px;
-          font-size: 12px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .navbar .logo {
-          height: 30px;  
-        }
-
-        .navbar .timer {
-          font-size: 1.1em;
-        }
-
-        .logout-button {
-          font-size: 10px;
-          padding: 5px 10px;
-        }
-
-        iframe {
-          height: 300px; 
-        }
-      }
-    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="page1/logo.png">
+    <link rel="icon" sizes="32x32" href="page1/logo.png">
+    <link rel="icon" sizes="16x16" href="page1/logo.png">
+    <link rel="stylesheet" href="css/form.css" />
   </head>
   <body>
-     
+    <div id="fullscreenModal">
+    <div class="modal-box">
+        <h2>Online Aptitude Test</h2>
+        <p>
+            This test must be taken in fullscreen mode.<br>
+            Click OK to begin.
+        </p>
+        <button id="startTestBtn">OK</button>
+    </div>
+</div>
     <div class="navbar">
-      <img src="logo.png" alt="Logo" class="logo" />
+      <img src="pages1/logo.png" alt="Logo" class="logo" />
 
       <!-- <h1>Aptitude</h1> -->
 
@@ -192,7 +38,7 @@
       <h3  style="margin-left: 5%;">Department of MCA</h3>
       <p  style="margin-left: 5%;">Please fill out the form below. You have 40 minutes to complete.</p>
       <p id="msg"  style="margin-left: 5%;"></p>
-     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBYL7iHuOBXheEivz-1dwHO6psZvW_mEeRUnzkKvCIN7UpeA/viewform?usp=header" width="640" height="1531" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBYL7iHuOBXheEivz-1dwHO6psZvW_mEeRUnzkKvCIN7UpeA/viewform?usp=header" width="640" height="1531" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
     ================================change code ==========================================
 
@@ -203,108 +49,6 @@
     </div>
 
 
-  <script>
-  /* ---------- AUTH CHECK ---------- */
-  if (sessionStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-
-  /* ---------- TIMER ---------- */
-  const timerElement = document.getElementById("timer");
-  const warningMessage = document.getElementById("warningMessage");
-
-  const TOTAL_TIME = 2400; // 40 minutes
-  const STORAGE_KEY = "sadhana_timer_start";
-  let visibilityCount = 0;
-
-  function nowSeconds() {
-    return Math.floor(Date.now() / 1000);
-  }
-
-  function updateTimerDisplay(timeLeft) {
-    const m = Math.floor(timeLeft / 60);
-    const s = timeLeft % 60;
-    timerElement.textContent =
-      String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
-  }
-
-  function initTimer() {
-    let startTime = localStorage.getItem(STORAGE_KEY);
-    if (!startTime) {
-      startTime = nowSeconds();
-      localStorage.setItem(STORAGE_KEY, startTime);
-    }
-
-    const interval = setInterval(() => {
-      const elapsed = nowSeconds() - startTime;
-      const timeLeft = TOTAL_TIME - elapsed;
-
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        alert("Time is up! Submit the form.");
-        logout(true);
-      } else {
-        updateTimerDisplay(timeLeft);
-      }
-    }, 1000);
-  }
-
-  function clearTimer() {
-    localStorage.removeItem(STORAGE_KEY);
-  }
-
-  initTimer();
-
-  /* ---------- TAB SWITCH RULE ---------- */
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") {
-      visibilityCount++;
-      warningMessage.style.display = "block";
-
-      if (visibilityCount >= 2) {
-        logout(true);
-      }
-    }
-  });
-
-  /* ---------- LOGOUT ---------- */
-  function logout(force = false) {
-    if (force || confirm("Confirm logout?")) {
-      clearTimer();
-      sessionStorage.clear();
-      window.location.href = "index.html";
-    }
-  }
-
-  /* ---------- DEVTOOLS DETECTION ---------- */
-  let devToolsOpened = false;
-  setInterval(() => {
-    if (
-      window.outerHeight - window.innerHeight > 160 ||
-      window.outerWidth - window.innerWidth > 100
-    ) {
-      if (!devToolsOpened) {
-        devToolsOpened = true;
-        alert("Warning: Close developer tools to continue.");
-      }
-    } else {
-      devToolsOpened = false;
-    }
-  }, 500);
-</script>
-  </body>
+<script src="js/form.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
