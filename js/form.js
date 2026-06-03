@@ -1,3 +1,4 @@
+
 /* ---------- AUTH CHECK ---------- */
 if (sessionStorage.getItem("loggedIn") !== "true") {
     window.location.href = "login.html";
@@ -78,8 +79,14 @@ let visibilityCount = 0;
 function nowSeconds() {
     return Math.floor(Date.now() / 1000);
 }
+const progressCircle = document.getElementById("progressCircle");
 
+const radius = 42;
+const circumference = 2 * Math.PI * radius;
+
+progressCircle.style.strokeDasharray = circumference;
 function updateTimerDisplay(timeLeft) {
+
     const m = Math.floor(timeLeft / 60);
     const s = timeLeft % 60;
 
@@ -87,8 +94,23 @@ function updateTimerDisplay(timeLeft) {
         String(m).padStart(2, "0") +
         ":" +
         String(s).padStart(2, "0");
-}
 
+    const progress = timeLeft / TOTAL_TIME;
+
+    progressCircle.style.strokeDashoffset =
+        circumference * (1 - progress);
+
+    // Change timer color based on remaining time
+    if (timeLeft <= 300) { // Last 5 minutes
+        progressCircle.style.stroke = "#ff4d4d";
+    }
+    else if (timeLeft <= 900) { // Last 15 minutes
+        progressCircle.style.stroke = "#ffb300";
+    }
+    else {
+        progressCircle.style.stroke = "goldenrod";
+    }
+}
 function initTimer() {
     let startTime = localStorage.getItem(STORAGE_KEY);
 

@@ -238,3 +238,41 @@
 .modal-box button:active{
     transform: translateY(1px);
 }
+.timer-container{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-ring{
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg{
+    fill: none;
+    stroke: rgba(255,255,255,0.2);
+    stroke-width: 8;
+}
+
+.progress-ring-circle{
+    fill: none;
+    stroke: goldenrod;
+    stroke-width: 8;
+    stroke-linecap: round;
+
+    stroke-dasharray: 264;
+    stroke-dashoffset: 0;
+
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-text{
+    position: absolute;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
