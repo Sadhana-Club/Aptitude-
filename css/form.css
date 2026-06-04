@@ -285,3 +285,56 @@
     position: relative;
     right: 25px;
 }
+.violation-counter{
+    color: #ffb300;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+    position: relative;
+    margin-bottom: 5px;
+    right: 25px;
+}
+#toast{
+    position: fixed;
+    top: 90px;
+    right: 20px;
+
+    min-width: 280px;
+
+    background: linear-gradient(
+        135deg,
+        #061539,
+        #0a2d78
+    );
+
+    color: white;
+
+    padding: 14px 20px;
+
+    border-left: 5px solid goldenrod;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.3);
+
+    display: none;
+
+    z-index: 999999;
+
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

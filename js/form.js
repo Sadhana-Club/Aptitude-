@@ -1,4 +1,27 @@
+function showToast(message) {
 
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        toast.style.display = "none";
+    }, 4000);
+}
+let warning10Shown = false;
+let warning5Shown = false;
+let warning1Shown = false;
+
+
+const violationCounter = document.getElementById("violationCount");
+let totalViolations = 0;
+
+function addViolation() {
+    totalViolations++;
+    violationCounter.textContent = totalViolations;
+}
 /* ---------- AUTH CHECK ---------- */
 if (sessionStorage.getItem("loggedIn") !== "true") {
     window.location.href = "login.html";
@@ -44,7 +67,7 @@ document.addEventListener("fullscreenchange", () => {
     if (!document.fullscreenElement && testStarted) {
 
         fullscreenExitCount++;
-
+        addViolation();
         if (fullscreenExitCount >= 2) {
 
             alert("You exited fullscreen multiple times. Test terminated.");
@@ -123,16 +146,31 @@ function initTimer() {
 
         const elapsed = nowSeconds() - startTime;
         const timeLeft = TOTAL_TIME - elapsed;
+        /* Time Remaining Warnings */
 
-        if (timeLeft <= 0) {
-            clearInterval(interval);
+    if (timeLeft <= 600 && !warning10Shown) {
+        warning10Shown = true;
+        showToast("⚠ 10 Minutes Remaining");
+    }
 
-            alert("Time is up! Test ended.");
+    if (timeLeft <= 300 && !warning5Shown) {
+        warning5Shown = true;
+        showToast("⚠ 5 Minutes Remaining");
+    }
 
-            logout(true);
-        } else {
-            updateTimerDisplay(timeLeft);
-        }
+    if (timeLeft <= 60 && !warning1Shown) {
+        warning1Shown = true;
+        showToast("🚨 Final 1 Minute Remaining");
+    }
+    if (timeLeft <= 0) {
+        clearInterval(interval);
+
+        alert("Time is up! Test ended.");
+
+        logout(true);
+    } else {
+        updateTimerDisplay(timeLeft);
+    }
 
     }, 1000);
 }
@@ -148,15 +186,16 @@ document.addEventListener("visibilitychange", () => {
 
     if (document.visibilityState === "hidden") {
 
-        visibilityCount++;
+    visibilityCount++;
+    addViolation();
 
-        warningMessage.style.display = "block";
+    warningMessage.style.display = "block";
 
-        if (visibilityCount >= 2) {
-            alert("Multiple tab switches detected.");
-            logout(true);
-        }
+    if (visibilityCount >= 2) {
+        alert("Multiple tab switches detected.");
+        logout(true);
     }
+}
 });
 
 /* ---------- LOGOUT ---------- */

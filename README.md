@@ -1,47 +1,102 @@
 # Sadhana Aptitude Test Portal
 
+## Overview
+
+Sadhana Aptitude Test Portal is a secure and professional web-based assessment platform developed for MCA students. The system provides a distraction-minimized testing environment with security monitoring, timer management, fullscreen enforcement, and user-friendly assessment controls.
+
+---
+
 ## Recent Updates
 
-### HTML Changes
+### HTML Enhancements
 
-* Added a custom fullscreen permission modal for test participants.
-* Improved the aptitude test interface with a professional assessment workflow.
-* Added a mandatory fullscreen confirmation popup before starting the test.
-* Enhanced user experience with a dedicated warning system for fullscreen violations.
-* Improved page structure and responsiveness for different screen sizes.
+* Added a Secure Assessment Loading Screen.
+* Implemented a mandatory fullscreen permission modal before starting the test.
+* Added Secure Mode Status Badge.
+* Added Violation Counter display.
+* Integrated Circular Countdown Timer UI.
+* Added Toast Notification container for system alerts.
+* Improved page structure and assessment workflow.
 
-### CSS Changes
+---
 
-* Designed a custom dark blue and golden yellow themed fullscreen modal.
-* Added modern UI styling with shadows, rounded corners, and hover effects.
-* Improved overall visual consistency across the aptitude test portal.
-* Enhanced responsiveness for desktop, tablet, and mobile devices.
-* Applied branding colors to match the Sadhana theme.
+### CSS Enhancements
 
-### JavaScript Changes
+* Designed a modern dark blue and golden yellow themed interface.
+* Created a premium fullscreen modal design.
+* Added responsive layouts for desktop, tablet, and mobile devices.
+* Designed animated Secure Mode Badge.
+* Styled Circular Countdown Timer.
+* Added modern toast notification styling.
+* Improved visual consistency across all pages.
+
+---
+
+### JavaScript Enhancements
 
 * Implemented session-based authentication checks.
-* Added a 40-minute countdown timer with persistence using Local Storage.
-* Implemented mandatory fullscreen mode before starting the test.
-* Added fullscreen exit detection and violation tracking.
-* Added tab-switch detection with automatic logout after multiple violations.
-* Implemented logout functionality with session cleanup.
-* Added Developer Tools detection and warning system.
+* Added a 40-minute persistent countdown timer using Local Storage.
+* Implemented Circular Countdown Progress Ring.
+* Added dynamic timer color transitions:
+
+  * Golden (Normal)
+  * Orange (15 Minutes Remaining)
+  * Red (Final 5 Minutes)
+* Added Secure Assessment Loading Screen workflow.
+* Implemented mandatory fullscreen mode before starting the assessment.
+* Added fullscreen exit detection and monitoring.
+* Implemented violation tracking system.
+* Added violation counter updates in real time.
+* Added Secure Mode Badge status updates.
+* Implemented tab-switch detection.
+* Added automatic logout after repeated violations.
+* Added Developer Tools detection and warnings.
 * Disabled right-click functionality during the test.
-* Blocked common keyboard shortcuts such as Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+U, and Ctrl+S.
-* Added automatic timer restoration after page refresh.
+* Blocked common keyboard shortcuts:
 
-### Security Features
+  * Ctrl + C
+  * Ctrl + V
+  * Ctrl + X
+  * Ctrl + U
+  * Ctrl + S
+* Added timer restoration after page refresh.
+* Added time remaining toast notifications:
 
-* Session-based access control.
-* Fullscreen monitoring.
-* Tab-switch monitoring.
-* Developer Tools detection.
-* Keyboard shortcut restrictions.
-* Right-click prevention.
-* Automatic logout on repeated violations.
+  * 10 Minutes Remaining
+  * 5 Minutes Remaining
+  * Final 1 Minute Warning
 
-### Technologies Used
+---
+
+## Security Features
+
+* Session-Based Authentication
+* Fullscreen Enforcement
+* Fullscreen Exit Monitoring
+* Tab Switch Monitoring
+* Violation Tracking System
+* Secure Mode Status Monitoring
+* Developer Tools Detection
+* Keyboard Shortcut Restrictions
+* Right-Click Prevention
+* Automatic Logout on Repeated Violations
+
+---
+
+## User Experience Features
+
+* Secure Assessment Loading Screen
+* Circular Countdown Timer
+* Dynamic Timer Color Indicators
+* Secure Mode Badge
+* Real-Time Violation Counter
+* Toast-Based Warning Notifications
+* Responsive User Interface
+* Professional Assessment Workflow
+
+---
+
+## Technologies Used
 
 * HTML5
 * CSS3
@@ -49,10 +104,14 @@
 * Google Forms
 * GitHub Pages
 
-### Project Goal
+---
 
-To provide a secure and professional online aptitude testing environment for MCA students while minimizing distractions and unauthorized activities during the assessment.
+## Project Goal
 
+To provide a secure, user-friendly, and professional online aptitude testing environment for MCA students while minimizing distractions and discouraging unauthorized activities during assessments.
 
+---
 
-- By Nagabhushana N;
+## Developed By
+
+**Nagabhushana N**
